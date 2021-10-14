@@ -54,8 +54,8 @@ const SignupScreen = (props) => {
         placeholderTextColor="white"
       />
       <br/>
-      <TouchableOpacity style={styles.buttonRegister}>
-        <Text style={styles.fontButton}>Register</Text>
+      <TouchableOpacity style={styles.buttonSignup}>
+        <Text style={styles.fontButton}>Sign Up</Text>
       </TouchableOpacity>
       <br/>
       <Text style={styles.font}><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back to login</i></Text>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'flex-start'
   },
-  buttonRegister: {
+  buttonSignup: {
     width: '80%',
     height: 40,
     justifyContent: "center",
