@@ -1,23 +1,45 @@
 import React, {useState, useEffect} from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import Header from "../components/Header";
 
 
 const Home = (props) => {
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>Police Report</Text>
+        <Header title="Police Report" />
+        <br/>
+        <View style={styles.row}>
+          <TouchableOpacity style={[styles.button, {backgroundColor: "white"}]}>
+            <Text style={styles.fontButton}>Whistles</Text>
+          </TouchableOpacity>
+          &nbsp;&nbsp;&nbsp;
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.fontButton}>Reports</Text>
+          </TouchableOpacity>
+        </View>
 
-          <TouchableOpacity style={styles.buttonWhistle}>
-            <Text style={styles.fontButton}>แจ้งเบาะแส</Text>
-          </TouchableOpacity><br/>
-      
-          <TouchableOpacity style={styles.buttonReport}>
-            <Text style={styles.fontButton}>แจ้งความ</Text>
-          </TouchableOpacity><br/>
-       
-          <TouchableOpacity style={styles.buttonStatus}>
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.fontButton}>Status</Text>
-          </TouchableOpacity><br/>
+          </TouchableOpacity>
+          &nbsp;&nbsp;&nbsp;
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.fontButton}>-</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.fontButton}>-</Text>
+          </TouchableOpacity>
+          &nbsp;&nbsp;&nbsp;
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.fontButton}>Setting</Text>
+          </TouchableOpacity>
+        </View>
+        
+      
+          
         
     </View>
   );
@@ -32,41 +54,20 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     flexWrap: "wrap",
+    padding: 5,
   },
-  buttonWhistle: {
-    width: '80%',
-    height: 40,
+  button: {
+    width: 115,
+    height: 115,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 5,
-    backgroundColor: "#60b45c",
-  },
-  buttonReport: {
-    width: '80%',
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 5,
-    backgroundColor: "#2596be",
-  },
-  buttonStatus: {
-    width: '80%',
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 5,
-    backgroundColor: "#c31521",
+    backgroundColor: "white",
   },
   fontButton: {
     fontWeight: "bold",
     fontSize: 15,
-    color: "white",
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "white",
-    paddingBottom: 100,
+    color: "black",
   },
 });
 
