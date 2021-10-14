@@ -7,23 +7,18 @@ const Home = (props) => {
     <View style={styles.container}>
         <Text style={styles.title}>Police Report</Text>
 
-        <View style={styles.row}>
           <TouchableOpacity style={styles.buttonWhistle}>
             <Text style={styles.fontButton}>แจ้งเบาะแส</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.row}>
+          </TouchableOpacity><br/>
+      
           <TouchableOpacity style={styles.buttonReport}>
             <Text style={styles.fontButton}>แจ้งความ</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.row}>
+          </TouchableOpacity><br/>
+       
           <TouchableOpacity style={styles.buttonStatus}>
             <Text style={styles.fontButton}>Status</Text>
-          </TouchableOpacity>
-        </View>
+          </TouchableOpacity><br/>
+        
     </View>
   );
 };
@@ -31,18 +26,15 @@ const Home = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "black",
   },
   row: {
     flexDirection: "row",
     flexWrap: "wrap",
-    padding: 10,
   },
   buttonWhistle: {
-    width: 250,
+    width: '80%',
     height: 40,
     justifyContent: "center",
     alignItems: "center",
@@ -50,7 +42,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#60b45c",
   },
   buttonReport: {
-    width: 250,
+    width: '80%',
     height: 40,
     justifyContent: "center",
     alignItems: "center",
@@ -58,7 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#2596be",
   },
   buttonStatus: {
-    width: 250,
+    width: '80%',
     height: 40,
     justifyContent: "center",
     alignItems: "center",
