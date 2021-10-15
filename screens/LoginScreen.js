@@ -1,36 +1,28 @@
 import React, {useState, useEffect} from "react";
-import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Platform, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Header from "../components/Header";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const LoginScreen = (props) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="Police Report" />
-      <br/>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        keyboardType="default"
-        placeholderTextColor="white"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        keyboardType="default"
-        secureTextEntry={true}
-        placeholderTextColor="white"
-      />
-      <br/>
-      <TouchableOpacity style={styles.buttonLogin}>
+      <Header title="Police Report"/>
+      <View style={[styles.action, {width: '80%'}]}>
+        <Icon name='user-o' size={30} />
+        <TextInput style={styles.textInput} placeholder="Email" keyboardType="default" placeholderTextColor="white"></TextInput>
+      </View>
+
+      <View style={[styles.action, {width: '80%', marginBottom: 10}]}>
+        <Icon name='lock' size={30} />
+        <TextInput style={styles.textInput} placeholder="Password" keyboardType="default" secureTextEntry={true} placeholderTextColor="white"></TextInput>
+      </View>
+
+      <TouchableOpacity style={[styles.button, {backgroundColor: '#60b45c', marginBottom: 10}]}>
         <Text style={styles.fontButton}>Log in</Text>
       </TouchableOpacity>
-      <br/>
-      <TouchableOpacity style={styles.buttonRegister}>
+      <TouchableOpacity style={[styles.button, {backgroundColor: '#2596be'}]}>
         <Text style={styles.fontButton}>Sign Up</Text>
       </TouchableOpacity>
-      <br/>
-      <Text style={styles.font}><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forgot your password?</i></Text>
-      <br/>
     </SafeAreaView>
   );
 };
@@ -41,45 +33,33 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  row: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
   fontButton: {
     fontWeight: 'bold',
     color: 'white'
   },
-  font: {
-    color: 'white',
-    alignSelf: 'flex-start'
-  },
-  input: {
-    height: 40,
-    width: '80%',
-    borderWidth: 1,
-    borderBottomColor: 'white',
-    padding: 10,
-    borderTopWidth: 0,
-    borderRightWidth: 0,
-    borderLeftWidth: 0,
-    color: 'white'
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "white",
-    paddingBottom: 70,
-  },
-  buttonLogin: {
+  button: {
     width: '80%',
     height: 40,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#60b45c",
   },
-  buttonRegister: {
-    width: '80%',
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#2596be",
+  action: {
+    flexDirection: 'row',
+    marginTop: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f2f2f2',
+    paddingBottom: 5
   },
+  textInput: {
+    flex: 1,
+    marginTop: Platform.OS === 'ios' ? 0 : -12,
+    paddingLeft: 10,
+    color: '#05375a'
+  }
 });
 
 export default LoginScreen;
