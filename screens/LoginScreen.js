@@ -12,15 +12,15 @@ const LoginScreen = (props) => {
         <TextInput style={styles.textInput} placeholder="Email" keyboardType="default" placeholderTextColor="white"></TextInput>
       </View>
 
-      <View style={[styles.action, {width: '80%', marginBottom: 10}]}>
+      <View style={[styles.action, {width: '80%', marginTop: 35}]}>
         <Icon name='lock' size={30} />
         <TextInput style={styles.textInput} placeholder="Password" keyboardType="default" secureTextEntry={true} placeholderTextColor="white"></TextInput>
       </View>
 
-      <TouchableOpacity style={[styles.button, {backgroundColor: '#60b45c', marginBottom: 10}]}>
+      <TouchableOpacity style={[styles.button, {backgroundColor: '#60b45c', marginTop: 35}]}>
         <Text style={styles.fontButton}>Log in</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.button, {backgroundColor: '#2596be'}]}>
+      <TouchableOpacity style={[styles.button, {backgroundColor: '#2596be', marginTop: 15}]}>
         <Text style={styles.fontButton}>Sign Up</Text>
       </TouchableOpacity>
     </SafeAreaView>

@@ -1,66 +1,55 @@
 import React, {useState, useEffect} from "react";
-import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Platform, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Header from "../components/Header";
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather';
 
 const SignupScreen = (props) => {
-
   return (
     <SafeAreaView style={styles.container}>
-      <br/>
-      <Header title="Create Account" />
-      <br/>
-      <TextInput
-        style={styles.input}
-        placeholder="FirstName"
-        keyboardType="default"
-        placeholderTextColor="white"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="LastName"
-        keyboardType="default"
-        placeholderTextColor="white"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Phone Number"
-        keyboardType="default"
-        placeholderTextColor="white"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="ID card"
-        keyboardType="default"
-        placeholderTextColor="white"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        keyboardType="default"
-        placeholderTextColor="white"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        keyboardType="default"
-        secureTextEntry={true}
-        placeholderTextColor="white"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Confirm Password"
-        keyboardType="default"
-        secureTextEntry={true}
-        placeholderTextColor="white"
-      />
-      <br/>
-      <TouchableOpacity style={styles.buttonSignup}>
+      <Header title="Police Report"/>
+
+      <View style={[styles.action, {width: '80%'}]}>
+        <FontAwesome name='user-o' size={20} />
+        <TextInput style={styles.textInput} placeholder="FirstName" keyboardType="default" placeholderTextColor="white"></TextInput>
+      </View>
+
+      <View style={[styles.action, {width: '80%', marginTop: 35}]}>
+        <FontAwesome name='user-o' size={20} />
+        <TextInput style={styles.textInput} placeholder="LastName" keyboardType="default" placeholderTextColor="white"></TextInput>
+      </View>
+
+      <View style={[styles.action, {width: '80%', marginTop: 35}]}>
+        <FontAwesome name='user-o' size={20} />
+        <TextInput style={styles.textInput} placeholder="PhoneNumber" keyboardType="default" placeholderTextColor="white"></TextInput>
+      </View>
+
+      <View style={[styles.action, {width: '80%', marginTop: 35}]}>
+        <FontAwesome name='user-o' size={20} />
+        <TextInput style={styles.textInput} placeholder="ID Card" keyboardType="default" placeholderTextColor="white"></TextInput>
+      </View>
+
+      <View style={[styles.action, {width: '80%', marginTop: 35}]}>
+        <FontAwesome name='user-o' size={20} />
+        <TextInput style={styles.textInput} placeholder="Email" keyboardType="default" placeholderTextColor="white" autoCapitalize="none"></TextInput>
+      </View>
+
+      <View style={[styles.action, {width: '80%', marginTop: 35}]}>
+        <Feather name='lock' size={20} />
+        <TextInput style={styles.textInput} placeholder="Password" keyboardType="default" secureTextEntry={true} placeholderTextColor="white"></TextInput>
+      </View>
+
+      <View style={[styles.action, {width: '80%', marginTop: 35}]}>
+        <Feather name='lock' size={20} />
+        <TextInput style={styles.textInput} placeholder="Confirm Password" keyboardType="default" secureTextEntry={true} placeholderTextColor="white"></TextInput>
+      </View>
+
+      <TouchableOpacity style={[styles.button, {backgroundColor: '#60b45c', marginTop: 35}]}>
         <Text style={styles.fontButton}>Sign Up</Text>
       </TouchableOpacity>
-      <br/>
-      <Text style={styles.font}><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back to login</i></Text>
-      <br/>
-      <br/>
+      <TouchableOpacity style={{marginTop: 10}}>
+        <Text style={styles.fontButton}>Back to login?</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -71,38 +60,33 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  input: {
-    height: 40,
-    width: '80%',
-    borderWidth: 1,
-    borderBottomColor: 'white',
-    padding: 10,
-    borderTopWidth: 0,
-    borderRightWidth: 0,
-    borderLeftWidth: 0,
-    color: 'white'
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "white",
-    paddingBottom: 70,
-  },
-  font: {
-    color: 'white',
-    alignSelf: 'flex-start'
-  },
-  buttonSignup: {
-    width: '80%',
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#60b45c",
+  row: {
+    flexDirection: "row",
+    flexWrap: "wrap",
   },
   fontButton: {
     fontWeight: 'bold',
     color: 'white'
   },
+  button: {
+    width: '80%',
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  action: {
+    flexDirection: 'row',
+    marginTop: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f2f2f2',
+    paddingBottom: 5
+  },
+  textInput: {
+    flex: 1,
+    marginTop: Platform.OS === 'ios' ? 0 : -12,
+    paddingLeft: 10,
+    color: '#05375a'
+  }
 });
 
 export default SignupScreen;
