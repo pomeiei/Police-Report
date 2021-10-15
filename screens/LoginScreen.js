@@ -8,7 +8,7 @@ const LoginScreen = (props) => {
     <SafeAreaView style={styles.container}>
       <Header title="Police Report"/>
       <View style={[styles.action, {width: '80%'}]}>
-        <Icon name='user-o' size={30} />
+        <Icon name='user-o' size={20} />
         <TextInput style={styles.textInput} placeholder="Email" keyboardType="default" placeholderTextColor="white"></TextInput>
       </View>
 
