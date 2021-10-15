@@ -7,3 +7,7 @@
   ```sh
   yarn add @react-navigation/bottom-tabs
   ```
+* [native-navigation](https://reactnavigation.org/docs/getting-started)
+  ```sh
+  yarn add @react-navigation/native
+  ```
