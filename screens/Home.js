@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MyProfile from './MyProfile';
 
 function Home() {
   return (
@@ -14,8 +15,8 @@ function Home() {
 
 function Profile() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
+    <View>
+      <MyProfile/>
     </View>
   );
 }
@@ -33,7 +34,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
       }}
