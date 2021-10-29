@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
 import LoginScreen from "./screens/LoginScreen";
-import RegisterScreen from "./screens/registerScreen";
+import SignupScreen from "./screens/SignupScreen";
+import Home from "./screens/Home";
 
 export default function App() {
 
-  const content = <LoginScreen/>
+  const content = <Home/>
   return (
     <View style={styles.screen}>
       <ImageBackground source={require('./assets/bg.png')} style={styles.backgroundImage}>
